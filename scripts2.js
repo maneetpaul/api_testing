@@ -1,5 +1,3 @@
-// TESTING
-
 // Grabs the root Div in the HTML
 const app = document.getElementById('root')
 
@@ -10,11 +8,25 @@ container.setAttribute('class','container')
 // Puts the container inside the root div
 app.appendChild(container)
 
+// Creates ONE div for all the gurbani lines to go inside
+const gurbaniLine = document.createElement('div')
+gurbaniLine.setAttribute('class', 'gurbaniLine')
+
+// Put gurbaniLine div into the container
+ container.appendChild(gurbaniLine)
+
+// Puts the Gurbani into a p
+const p = document.createElement('p')
+
+ // put the p text into the gurbaniLine div
+ gurbaniLine.appendChild(p)
+
+
 // Create a request variable and assign a new XMLHttpRequest object to it.
 var request = new XMLHttpRequest()
 
 // Open a new connection, using the GET request on the URL endpoint
-request.open('GET', 'https://api.banidb.com/v2/angs/917', true)
+request.open('GET', 'https://api.banidb.com/v2/banis/10', true)
 //request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
 
 request.onload = function () {
@@ -26,7 +38,7 @@ request.onload = function () {
   console.log(data)
 
   // Isolate ang verses into an array variable
-  const angContent = data.page
+  const angContent = data.verses
 
   // Display angContent
   console.log(angContent)
@@ -35,19 +47,9 @@ request.onload = function () {
 if (request.status >= 200 && request.status <400) {
   angContent.forEach(gurmukhi => {
 
-    // Creates a div for each line with gurbaniLine class
-    const gurbaniLine = document.createElement('div')
-    gurbaniLine.setAttribute('class', 'gurbaniLine')
+    //  console.log(gurmukhi.verse.verse.unicode)
 
-    // Puts the Gurbani into a p
-    const p = document.createElement('p')
-    p.textContent = gurmukhi.verse.unicode
-
-    // Put gurbaniLine divs into the container
-     container.appendChild(gurbaniLine)
-
-     // put the p text into the gurbaniLine divs
-     gurbaniLine.appendChild(p)
+     p.textContent = gurmukhi.verse.verse.unicode
 
   })
 } else {
