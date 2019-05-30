@@ -57,3 +57,15 @@ if (request.status >= 200 && request.status <400) {
 
 // Send request
 request.send()
+
+
+// Load next ang
+
+const loadMore = () => {
+
+request.open('GET', 'https://api.banidb.com/v2/angs/918', true)
+const data = JSON.parse(this.response)
+console.log(data)
+
+
+}

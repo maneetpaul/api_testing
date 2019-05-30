@@ -21,3 +21,14 @@
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
 }
+
+button {
+    align-self: center;
+    border: none;
+    background-color: inherit;
+    font-size: 1em;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 1em;
+
+}
