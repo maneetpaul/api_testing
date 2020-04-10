@@ -25,9 +25,15 @@
   font-weight: bold;
 }
 
+.main {
+  background-color: white;
+  height: 100%;
+  opacity: .2;
+}
+
 body  {
   background-image: url("./assets/background.jpg");
-  background-color: #FFF;
+  background-size: cover;
 }
 
 button {
