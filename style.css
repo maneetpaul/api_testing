@@ -25,6 +25,11 @@
   font-weight: bold;
 }
 
+body  {
+  background-image: url("./assets/background.jpg");
+  background-color: #FFF;
+}
+
 button {
     align-self: center;
     border: none;
